@@ -13,6 +13,21 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'orbitron': ['Orbitron', 'sans-serif'],
+        'martial': ['Orbitron', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-dragon': 'var(--gradient-dragon)',
+        'gradient-fire': 'var(--gradient-fire)', 
+        'gradient-shadow': 'var(--gradient-shadow)',
+      },
+      boxShadow: {
+        'dragon': 'var(--shadow-dragon)',
+        'strike': 'var(--shadow-strike)',
+        'inner': 'var(--shadow-inner)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

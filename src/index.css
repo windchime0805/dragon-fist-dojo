@@ -1,42 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Dragon Fist Martial Arts Design System - Inspired by martial arts power and precision */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Martial Arts Theme */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Dragon Red - Primary brand color from logo */
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Martial Gold - Secondary accent from logo */
+    --secondary: 45 95% 60%;
+    --secondary-foreground: 0 0% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Muted tones for subtle elements */
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent colors for highlights */
+    --accent: 45 95% 60%;
+    --accent-foreground: 0 0% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 25%;
+    --input: 0 0% 20%;
+    --ring: 0 85% 55%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --radius: 0.75rem;
 
-    --radius: 0.5rem;
+    /* Martial Arts Gradients */
+    --gradient-dragon: linear-gradient(135deg, hsl(0 85% 55%), hsl(15 90% 50%));
+    --gradient-fire: linear-gradient(180deg, hsl(0 85% 55%), hsl(45 95% 60%));
+    --gradient-shadow: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 15%) 100%);
+    
+    /* Martial Arts Shadows */
+    --shadow-dragon: 0 10px 40px -10px hsl(0 85% 55% / 0.4);
+    --shadow-strike: 0 25px 50px -12px hsl(0 85% 55% / 0.6);
+    --shadow-inner: inset 0 2px 4px 0 hsl(0 0% 0% / 0.3);
+    
+    /* Animation Variables */
+    --transition-swift: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-power: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +119,75 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Martial Arts Component Styles */
+  .martial-gradient {
+    background: var(--gradient-dragon);
+  }
+  
+  .fire-gradient {
+    background: var(--gradient-fire);
+  }
+  
+  .shadow-gradient {
+    background: var(--gradient-shadow);
+  }
+  
+  .dragon-shadow {
+    box-shadow: var(--shadow-dragon);
+  }
+  
+  .strike-shadow {
+    box-shadow: var(--shadow-strike);
+  }
+  
+  .inner-shadow {
+    box-shadow: var(--shadow-inner);
+  }
+  
+  .transition-swift {
+    transition: var(--transition-swift);
+  }
+  
+  .transition-power {
+    transition: var(--transition-power);
+  }
+
+  /* Martial Arts Animation Classes */
+  .martial-hover {
+    @apply transition-power hover:scale-105 hover:shadow-[var(--shadow-strike)];
+  }
+  
+  .dragon-glow {
+    @apply relative;
+  }
+  
+  .dragon-glow::before {
+    @apply absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-500;
+    content: '';
+    background: var(--gradient-dragon);
+    filter: blur(20px);
+    z-index: -1;
+  }
+  
+  .dragon-glow:hover::before {
+    @apply opacity-30;
+  }
+
+  /* Typography Classes */
+  .text-dragon {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .font-martial {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
   }
 }
