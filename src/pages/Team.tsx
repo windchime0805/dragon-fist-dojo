@@ -17,21 +17,25 @@ const Team = () => {
         {
           title: "Club President",
           name: "To be assigned",
+          image: "src/assets/team/club-president.jpg",
           responsibilities: ["Overall club leadership", "Strategic planning", "University liaison", "Major decision making"]
         },
         {
           title: "Vice President", 
           name: "To be assigned",
+          image: "/team/vice-president.jpg",
           responsibilities: ["Support president", "Event oversight", "Member coordination", "Policy implementation"]
         },
         {
           title: "Secretary",
           name: "To be assigned", 
+          image: "/team/secretary.jpg",
           responsibilities: ["Meeting minutes", "Documentation", "Communication", "Record keeping"]
         },
         {
           title: "Treasurer",
           name: "To be assigned",
+          image: "/team/treasurer.jpg",
           responsibilities: ["Financial management", "Budget planning", "Expense tracking", "Fundraising"]
         }
       ]
@@ -45,16 +49,19 @@ const Team = () => {
         {
           title: "Head Instructor",
           name: "To be assigned",
+          image: "/team/head-instructor.jpg",
           responsibilities: ["Training curriculum", "Belt assessments", "Technique instruction", "Safety protocols"]
         },
         {
           title: "Assistant Instructor",
           name: "To be assigned", 
+          image: "/team/assistant-instructor.jpg",
           responsibilities: ["Training support", "Beginner classes", "Equipment management", "Skill development"]
         },
         {
           title: "Safety Coordinator",
           name: "To be assigned",
+          image: "/team/safety-coordinator.jpg",
           responsibilities: ["Safety measures", "First aid", "Equipment inspection", "Risk assessment"]
         }
       ]
@@ -68,16 +75,19 @@ const Team = () => {
         {
           title: "Events Manager",
           name: "To be assigned",
+          image: "/team/events-manager.jpg",
           responsibilities: ["Event planning", "Competition organization", "Venue coordination", "Schedule management"]
         },
         {
           title: "Competition Coordinator",
           name: "To be assigned",
+          image: "/team/competition-coordinator.jpg",
           responsibilities: ["Tournament setup", "Match scheduling", "Referee coordination", "Awards ceremony"]
         },
         {
           title: "Workshop Organizer",
           name: "To be assigned",
+          image: "/team/workshop-organizer.jpg",
           responsibilities: ["Training workshops", "Guest instructors", "Skill sessions", "Educational programs"]
         }
       ]
@@ -91,16 +101,19 @@ const Team = () => {
         {
           title: "PR Manager",
           name: "To be assigned",
+          image: "/team/pr-manager.jpg",
           responsibilities: ["Social media", "Public relations", "Brand management", "Community engagement"]
         },
         {
           title: "Marketing Lead",
           name: "To be assigned",
+          image: "/team/marketing-lead.jpg",
           responsibilities: ["Promotional campaigns", "Recruitment drives", "Sponsorship", "Partnership development"]
         },
         {
           title: "Content Creator",
           name: "To be assigned",
+          image: "/team/content-creator.jpg",
           responsibilities: ["Photography/videography", "Content creation", "Website management", "Digital presence"]
         }
       ]
@@ -186,8 +199,20 @@ const Team = () => {
                   {currentTeam.roles.map((role, index) => (
                     <div 
                       key={index}
-                      className="bg-muted/30 p-6 rounded-lg martial-hover border border-border/50"
+                      className="group bg-muted/30 p-6 rounded-lg martial-hover border border-border/50"
                     >
+                      {/* Member Image */}
+            <div className="mb-4 relative overflow-hidden rounded-md aspect-square">
+                        <img
+                          src={role.image || "/placeholder.svg"}
+                          alt={`${role.title} - ${role.name}`}
+                          loading="lazy"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
+              className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-300 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      </div>
+
                       <div className="flex items-start justify-between mb-4">
                         <div>
                           <h3 className="text-xl font-martial font-semibold text-foreground mb-2">
