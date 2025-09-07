@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import LoadingScreen from "./components/LoadingScreen";
 import MouseFollower from "./components/MouseFollower";
+import SmoothScroll from "./components/SmoothScroll";
 import { usePageTransition } from "./hooks/usePageTransition";
 import Index from "./pages/Index";
 import Events from "./pages/Events";
@@ -20,6 +21,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
+  <SmoothScroll />
       {isLoading && <LoadingScreen />}
       <MouseFollower />
       <Header />
