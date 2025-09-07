@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Martial Arts Theme */
+    /* Core Brand Colors - Dragon Fist Logo Theme */
     --background: 0 0% 8%;
     --foreground: 0 0% 95%;
 
@@ -18,39 +18,41 @@
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
 
-    /* Dragon Red - Primary brand color from logo */
-    --primary: 0 85% 55%;
-    --primary-foreground: 0 0% 98%;
+    /* Dragon Red - Exact from logo */
+    --primary: 0 89% 51%;
+    --primary-foreground: 0 0% 100%;
     
-    /* Martial Gold - Secondary accent from logo */
-    --secondary: 45 95% 60%;
-    --secondary-foreground: 0 0% 15%;
+    /* Dragon Gold - Exact from logo accents */
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 0 0% 10%;
 
     /* Muted tones for subtle elements */
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    /* Accent colors for highlights */
-    --accent: 45 95% 60%;
-    --accent-foreground: 0 0% 15%;
+    /* Accent - Dragon Gold for highlights */
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 85% 55%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 89% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 20%;
-    --ring: 0 85% 55%;
+    --border: 0 0% 22%;
+    --input: 0 0% 18%;
+    --ring: 0 89% 51%;
 
     --radius: 0.75rem;
 
-    /* Martial Arts Gradients */
-    --gradient-dragon: linear-gradient(135deg, hsl(0 85% 55%), hsl(15 90% 50%));
-    --gradient-fire: linear-gradient(180deg, hsl(0 85% 55%), hsl(45 95% 60%));
+    /* Dragon Fist Gradients - Based on logo colors */
+    --gradient-dragon: linear-gradient(135deg, hsl(0 89% 51%), hsl(15 95% 45%));
+    --gradient-fire: linear-gradient(180deg, hsl(0 89% 51%), hsl(45 100% 55%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 95% 60%));
     --gradient-shadow: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 15%) 100%);
     
-    /* Martial Arts Shadows */
-    --shadow-dragon: 0 10px 40px -10px hsl(0 85% 55% / 0.4);
-    --shadow-strike: 0 25px 50px -12px hsl(0 85% 55% / 0.6);
+    /* Dragon Fist Shadows */
+    --shadow-dragon: 0 10px 40px -10px hsl(0 89% 51% / 0.4);
+    --shadow-gold: 0 10px 30px -10px hsl(45 100% 55% / 0.3);
+    --shadow-strike: 0 25px 50px -12px hsl(0 89% 51% / 0.6);
     --shadow-inner: inset 0 2px 4px 0 hsl(0 0% 0% / 0.3);
     
     /* Animation Variables */
@@ -133,12 +135,20 @@
     background: var(--gradient-fire);
   }
   
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+  
   .shadow-gradient {
     background: var(--gradient-shadow);
   }
   
   .dragon-shadow {
     box-shadow: var(--shadow-dragon);
+  }
+  
+  .gold-shadow {
+    box-shadow: var(--shadow-gold);
   }
   
   .strike-shadow {

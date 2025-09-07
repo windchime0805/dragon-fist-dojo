@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Users, Settings, Calendar, Megaphone } from 'lucide-react';
 
 const Team = () => {
-  const teams = [
-    {
-      id: 1,
+  const [activeTeam, setActiveTeam] = useState('admin');
+
+  const teams = {
+    admin: {
       name: "Admin Team",
       icon: <Users className="w-8 h-8" />,
       color: "martial-gradient",
+      description: "Leadership and strategic management of Dragon Fist operations",
       roles: [
         {
           title: "Club President",
@@ -32,11 +36,11 @@ const Team = () => {
         }
       ]
     },
-    {
-      id: 2,
+    technical: {
       name: "Technical Team",
       icon: <Settings className="w-8 h-8" />,
-      color: "bg-secondary text-secondary-foreground",
+      color: "gold-gradient",
+      description: "Training expertise and martial arts instruction",
       roles: [
         {
           title: "Head Instructor",
@@ -55,11 +59,11 @@ const Team = () => {
         }
       ]
     },
-    {
-      id: 3,
+    events: {
       name: "Events Team",
       icon: <Calendar className="w-8 h-8" />,
       color: "bg-accent text-accent-foreground",
+      description: "Competition and event organization specialists",
       roles: [
         {
           title: "Events Manager",
@@ -78,11 +82,11 @@ const Team = () => {
         }
       ]
     },
-    {
-      id: 4,
+    outreach: {
       name: "Market Outreach",
       icon: <Megaphone className="w-8 h-8" />,
       color: "bg-primary text-primary-foreground",
+      description: "Marketing, promotion and community engagement",
       roles: [
         {
           title: "PR Manager",
@@ -101,7 +105,16 @@ const Team = () => {
         }
       ]
     }
+  };
+
+  const teamButtons = [
+    { key: 'admin', label: 'Admin', icon: <Users className="w-5 h-5" /> },
+    { key: 'technical', label: 'Technical', icon: <Settings className="w-5 h-5" /> },
+    { key: 'events', label: 'Events', icon: <Calendar className="w-5 h-5" /> },
+    { key: 'outreach', label: 'Outreach', icon: <Megaphone className="w-5 h-5" /> }
   ];
+
+  const currentTeam = teams[activeTeam as keyof typeof teams];
 
   return (
     <div className="min-h-screen bg-gradient-shadow">
@@ -117,73 +130,97 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Teams Grid */}
-      <section className="py-16 px-4">
+      {/* Team Navigation */}
+      <section className="py-8 px-4">
         <div className="container mx-auto">
-          <div className="grid gap-8 lg:gap-12">
-            {teams.map((team) => (
-              <Card key={team.id} className="bg-card border-border overflow-hidden">
-                <CardContent className="p-0">
-                  {/* Team Header */}
-                  <div className="p-8 border-b border-border">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`p-3 rounded-lg ${team.color}`}>
-                        {team.icon}
-                      </div>
-                      <div>
-                        <h2 className="text-3xl font-martial font-bold text-dragon">
-                          {team.name}
-                        </h2>
-                        <Badge className={team.color}>
-                          {team.roles.length} Positions
-                        </Badge>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Roles Grid */}
-                  <div className="p-8">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {team.roles.map((role, index) => (
-                        <div 
-                          key={index}
-                          className="bg-muted/30 p-6 rounded-lg martial-hover"
-                        >
-                          <div className="flex items-start justify-between mb-4">
-                            <div>
-                              <h3 className="text-xl font-martial font-semibold text-foreground mb-2">
-                                {role.title}
-                              </h3>
-                              <p className="text-primary font-medium">
-                                {role.name}
-                              </p>
-                            </div>
-                          </div>
-                          
-                          <div>
-                            <h4 className="text-sm font-martial font-medium text-muted-foreground mb-2 uppercase tracking-wider">
-                              Key Responsibilities
-                            </h4>
-                            <ul className="space-y-1">
-                              {role.responsibilities.map((responsibility, idx) => (
-                                <li 
-                                  key={idx}
-                                  className="text-sm text-muted-foreground flex items-start"
-                                >
-                                  <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                  {responsibility}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {teamButtons.map((team) => (
+              <Button
+                key={team.key}
+                onClick={() => setActiveTeam(team.key)}
+                variant={activeTeam === team.key ? "default" : "outline"}
+                className={`font-martial font-semibold transition-power px-6 py-3 ${
+                  activeTeam === team.key 
+                    ? 'martial-gradient text-white dragon-shadow' 
+                    : 'border-primary text-primary hover:bg-primary hover:text-white'
+                }`}
+              >
+                {team.icon}
+                <span className="ml-2">{team.label}</span>
+              </Button>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Active Team Display */}
+      <section className="py-8 px-4">
+        <div className="container mx-auto">
+          <Card className="bg-card border-border overflow-hidden martial-hover">
+            <CardContent className="p-0">
+              {/* Team Header */}
+              <div className="p-8 border-b border-border">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`p-3 rounded-lg ${currentTeam.color}`}>
+                    {currentTeam.icon}
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-martial font-bold text-dragon">
+                      {currentTeam.name}
+                    </h2>
+                    <p className="text-muted-foreground font-inter mt-2">
+                      {currentTeam.description}
+                    </p>
+                  </div>
+                  <div className="ml-auto">
+                    <Badge className={currentTeam.color}>
+                      {currentTeam.roles.length} Positions
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Roles Grid */}
+              <div className="p-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {currentTeam.roles.map((role, index) => (
+                    <div 
+                      key={index}
+                      className="bg-muted/30 p-6 rounded-lg martial-hover border border-border/50"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-xl font-martial font-semibold text-foreground mb-2">
+                            {role.title}
+                          </h3>
+                          <p className="text-primary font-medium">
+                            {role.name}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-sm font-martial font-medium text-muted-foreground mb-3 uppercase tracking-wider">
+                          Key Responsibilities
+                        </h4>
+                        <ul className="space-y-2">
+                          {role.responsibilities.map((responsibility, idx) => (
+                            <li 
+                              key={idx}
+                              className="text-sm text-muted-foreground flex items-start"
+                            >
+                              <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              {responsibility}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
