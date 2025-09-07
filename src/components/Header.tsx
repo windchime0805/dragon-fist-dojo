@@ -22,12 +22,18 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 dragon-glow">
-            <img 
-              src={dragonLogo} 
-              alt="Dragon Fist Martial Arts" 
-              className="h-10 w-10 object-contain"
-            />
+          <Link to="/" className="flex items-center space-x-3 dragon-glow martial-hover">
+            <div className="relative">
+              <img 
+                src={dragonLogo} 
+                alt="Dragon Fist Martial Arts" 
+                className="h-12 w-12 object-contain transition-transform duration-300 hover:rotate-12"
+                style={{
+                  filter: 'drop-shadow(0 0 10px hsl(0 89% 51% / 0.5))'
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-dragon opacity-0 hover:opacity-20 rounded-full blur-md transition-opacity duration-300"></div>
+            </div>
             <div>
               <h1 className="font-martial font-bold text-xl text-dragon">
                 DRAGON FIST

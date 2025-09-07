@@ -45,11 +45,17 @@ const Index = () => {
         
         <div className="container mx-auto text-center relative z-10">
           <div className="mb-8 dragon-glow">
-            <img 
-              src={dragonLogo} 
-              alt="Dragon Fist Martial Arts" 
-              className="h-24 w-24 mx-auto mb-6 object-contain"
-            />
+            <div className="relative w-32 h-32 mx-auto mb-6">
+              <div className="absolute inset-0 bg-gradient-dragon rounded-full blur-xl opacity-30 animate-pulse"></div>
+              <img 
+                src={dragonLogo} 
+                alt="Dragon Fist Martial Arts" 
+                className="relative h-full w-full object-contain martial-hover"
+                style={{
+                  filter: 'drop-shadow(0 0 20px hsl(0 89% 51% / 0.6))'
+                }}
+              />
+            </div>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-martial font-black mb-6">
