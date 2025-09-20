@@ -17,7 +17,7 @@ const Team = () => {
         {
           title: "Club President",
           name: "To be assigned",
-          image: "src/assets/team/club-president.jpg",
+          image: "src/assets/team/1744627269668 - Vatanesh Sharma.jpg",
           responsibilities: ["Overall club leadership", "Strategic planning", "University liaison", "Major decision making"]
         },
         {
