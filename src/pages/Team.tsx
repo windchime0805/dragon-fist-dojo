@@ -15,7 +15,7 @@ const Team = () => {
       description: "Leadership and strategic management of Dragon Fist operations",
       roles: [
         {
-          title: "Club President",
+          title: "Vatnesh Sharma ",
           name: "To be assigned",
           image: "src/assets/team/1744627269668 - Vatanesh Sharma.jpg",
           responsibilities: ["Overall club leadership", "Strategic planning", "University liaison", "Major decision making"]
