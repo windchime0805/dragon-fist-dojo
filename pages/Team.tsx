@@ -59,31 +59,65 @@ const Team = () => {
       description: "Training expertise and martial arts instruction",
       roles: [
         {
-          title: "Lead Instructor",
+          title: "Lead ( Training & Skill Development)",
           name: "Divye Prakash",
           image: "/team/head-instructor.jpg",
-          responsibilities: ["Training curriculum", "Belt assessments", "Technique instruction", "Safety protocols"]
+          responsibilities: ["Training curriculum", "Belt assessments", "Technique instruction", "Safety protocols","Technical troubleshooting"]
         },
         {
-          title: "Co-Lead Instructor",
+          title: "Co-Lead(Training & Skill Development)",
           name: "Rushika Ramadugu", 
           image: "/team/assistant-instructor.jpg",
-          responsibilities: ["Training support", "Beginner classes", "Equipment management", "Skill development"]
+          responsibilities: ["Training support", "Beginner classes", "Equipment management", "Skill development","Tech support","Digital platforms"]
         },
         {
-          title: "Documentation (Lead)",
+          title: "Lead(Event Tech & Digital Ops)",
           name: "Thamminana Vipul",
           image: "assets/team/Documentation(Lead)THAMMINANA VIPUL 23BCE9595.jpg",
           responsibilities: ["Safety measures", "First aid", "Equipment inspection", "Risk assessment"," Documentation"]
         },
         {
-          title: "Documentation (Co-lead)",
-          name: " Dikshith",
+          title: "Co-lead (Event Tech & Digital Ops)",
+          name: "Dikshith",
           image: "assets/team/Documentation(Co-lead)DIKSHITH PATHEPUR 23BCE8340.JPG",
-          responsibilities: ["Safety measures", "First aid", "Equipment inspection", "Risk assessment"]
+          responsibilities: ["Event tech setup","Live streaming","Digital operations"]
         },
       ]
     },
+
+    creative: {
+      name: "Creative Team",
+      icon: <Settings className="w-8 h-8" />,
+      color: "gold-gradient",
+      description: "Design, Branding, Photography, Videography, Media Editing, Event Support, Innovation & Aesthetics",
+      roles: [
+        {
+          title: "Lead (Photography & Videography)",
+          name: "Jasiyah Sheik",
+          image: "/team/head-instructor.jpg",
+          responsibilities: ["Event coverage","Media storage","Video editing","Reels","Creative highlights"]
+        },
+        {
+          title: "Lead (Media & Documentation)",
+          name: "Varshitha", 
+          image: "/team/assistant-instructor.jpg",
+          responsibilities: ["Ensures photos","Videos","Fresh ideas","Digital art","Aesthetics"]
+        },
+        {
+          title: "Co-lead(Social Media & Promotions)",
+          name: "Sampreeti",
+          image: "assets/team/Documentation(Lead)THAMMINANA VIPUL 23BCE9595.jpg",
+          responsibilities: ["Manages Instagram", "Posters","Reels","Promotions","Content creation"]
+        },
+        {
+          title: "Co-lead(Design & Branding)",
+          name: "Isha",
+          image: "assets/team/Documentation(Co-lead)DIKSHITH PATHEPUR 23BCE8340.JPG",
+          responsibilities: ["Graphics", "Club logo","Visual identity"]
+        },
+      ]
+    },
+
     events: {
       name: "Events Team",
       icon: <Calendar className="w-8 h-8" />,
