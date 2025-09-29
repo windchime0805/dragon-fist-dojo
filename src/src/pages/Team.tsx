@@ -15,38 +15,26 @@ const Team = () => {
       description: "Leadership and strategic management of Dragon Fist operations",
       roles: [
         {
-          title: "President",
-          name: "Vatanesh Sharma",
-          image: "src/assets/team/President Vatanesh Sharma.jpg",
+          title: "Club President",
+          name: "To be assigned",
+          image: "src/assets/team/1744627269668 - Vatanesh Sharma.jpg",
           responsibilities: ["Overall club leadership", "Strategic planning", "University liaison", "Major decision making"]
         },
         {
           title: "Vice President", 
-          name: "Ramya",
+          name: "To be assigned",
           image: "/team/vice-president.jpg",
           responsibilities: ["Support president", "Event oversight", "Member coordination", "Policy implementation"]
         },
         {
           title: "Secretary",
-          name: "Srilekha", 
+          name: "To be assigned", 
           image: "/team/secretary.jpg",
           responsibilities: ["Meeting minutes", "Documentation", "Communication", "Record keeping"]
         },
         {
-          title: "Assistant Secretary",
-          name: "Abhishek Bharadwaj", 
-          image: "/team/secretary.jpg",
-          responsibilities: ["Meeting minutes", "Documentation", "Communication", "Record keeping"]
-        },
-        {
-          title: "Club Manager",
-          name: "Sai Ganesh", 
-          image: "/team/secretary.jpg",
-          responsibilities: ["Meeting minutes", "Communication", "Record keeping"]
-        },
-        {
-          title: "Communication incharge",
-          name: "Anchal",
+          title: "Treasurer",
+          name: "To be assigned",
           image: "/team/treasurer.jpg",
           responsibilities: ["Financial management", "Budget planning", "Expense tracking", "Fundraising"]
         }
@@ -59,65 +47,25 @@ const Team = () => {
       description: "Training expertise and martial arts instruction",
       roles: [
         {
-          title: "Lead ( Training & Skill Development)",
-          name: "Divye Prakash",
+          title: "Head Instructor",
+          name: "To be assigned",
           image: "/team/head-instructor.jpg",
-          responsibilities: ["Training curriculum", "Belt assessments", "Technique instruction", "Safety protocols","Technical troubleshooting"]
+          responsibilities: ["Training curriculum", "Belt assessments", "Technique instruction", "Safety protocols"]
         },
         {
-          title: "Co-Lead(Training & Skill Development)",
-          name: "Rushika Ramadugu", 
-          image: "Rushikafinal.jpeg",
-          responsibilities: ["Training support", "Beginner classes", "Equipment management", "Skill development","Tech support","Digital platforms"]
-        },
-        {
-          title: "Lead(Event Tech & Digital Ops)",
-          name: "Thamminana Vipul",
-          image: "assets/team/Documentation(Lead)THAMMINANA VIPUL 23BCE9595.jpg",
-          responsibilities: ["Safety measures", "First aid", "Equipment inspection", "Risk assessment"," Documentation"]
-        },
-        {
-          title: "Co-lead (Event Tech & Digital Ops)",
-          name: "Dikshith",
-          image: "assets/team/Documentation(Co-lead)DIKSHITH PATHEPUR 23BCE8340.JPG",
-          responsibilities: ["Event tech setup","Live streaming","Digital operations"]
-        },
-      ]
-    },
-
-    creative: {
-      name: "Creative Team",
-      icon: <Settings className="w-8 h-8" />,
-      color: "gold-gradient",
-      description: "Design, Branding, Photography, Videography, Media Editing, Event Support, Innovation & Aesthetics",
-      roles: [
-        {
-          title: "Lead (Photography & Videography)",
-          name: "Jasiyah Sheik",
-          image: "/team/head-instructor.jpg",
-          responsibilities: ["Event coverage","Media storage","Video editing","Reels","Creative highlights"]
-        },
-        {
-          title: "Lead (Media & Documentation)",
-          name: "Varshitha", 
+          title: "Assistant Instructor",
+          name: "To be assigned", 
           image: "/team/assistant-instructor.jpg",
-          responsibilities: ["Ensures photos","Videos","Fresh ideas","Digital art","Aesthetics"]
+          responsibilities: ["Training support", "Beginner classes", "Equipment management", "Skill development"]
         },
         {
-          title: "Co-lead(Social Media & Promotions)",
-          name: "Sampreeti",
-          image: "assets/team/Documentation(Lead)THAMMINANA VIPUL 23BCE9595.jpg",
-          responsibilities: ["Manages Instagram", "Posters","Reels","Promotions","Content creation"]
-        },
-        {
-          title: "Co-lead(Design & Branding)",
-          name: "Isha",
-          image: "assets/team/Documentation(Co-lead)DIKSHITH PATHEPUR 23BCE8340.JPG",
-          responsibilities: ["Graphics", "Club logo","Visual identity"]
-        },
+          title: "Safety Coordinator",
+          name: "To be assigned",
+          image: "/team/safety-coordinator.jpg",
+          responsibilities: ["Safety measures", "First aid", "Equipment inspection", "Risk assessment"]
+        }
       ]
     },
-
     events: {
       name: "Events Team",
       icon: <Calendar className="w-8 h-8" />,
@@ -125,26 +73,20 @@ const Team = () => {
       description: "Competition and event organization specialists",
       roles: [
         {
-          title: "Events Manager (Lead)",
-          name: "Mritunjay Sharma",
+          title: "Events Manager",
+          name: "To be assigned",
           image: "/team/events-manager.jpg",
           responsibilities: ["Event planning", "Competition organization", "Venue coordination", "Schedule management"]
         },
         {
-          title: "Events Manager (Lead)",
-          name: "Krishna Teja",
-          image: "/team/events-manager.jpg",
-          responsibilities: ["Event planning", "Competition organization", "Venue coordination", "Schedule management"]
-        },
-        {
-          title: "Events Manager (Co-Lead)",
-          name: "Jampana Manogna",
-          image: "assets/team/MANOGHNA-24BAP7003 - JAMPANA MANOGHNA 24BAP7003.jpg",
+          title: "Competition Coordinator",
+          name: "To be assigned",
+          image: "/team/competition-coordinator.jpg",
           responsibilities: ["Tournament setup", "Match scheduling", "Referee coordination", "Awards ceremony"]
         },
         {
-          title: "Events Manager (Co-Lead)",
-          name: "Veerendra",
+          title: "Workshop Organizer",
+          name: "To be assigned",
           image: "/team/workshop-organizer.jpg",
           responsibilities: ["Training workshops", "Guest instructors", "Skill sessions", "Educational programs"]
         }
@@ -158,20 +100,20 @@ const Team = () => {
       roles: [
         {
           title: "PR Manager",
-          name: "Santhosh Kumar KJ",
-          image: "assets/team/Lead Outreach and Marketing SANTOSH KUMAR KJ .jpg",
+          name: "To be assigned",
+          image: "/team/pr-manager.jpg",
           responsibilities: ["Social media", "Public relations", "Brand management", "Community engagement"]
         },
         {
           title: "Marketing Lead",
-          name: "Neeha",
-          image: "assets/team/Outreach and Marketing (Colead) Department  BAR NEEHA ANJUM 23BEC7366.jpg",
+          name: "To be assigned",
+          image: "/team/marketing-lead.jpg",
           responsibilities: ["Promotional campaigns", "Recruitment drives", "Sponsorship", "Partnership development"]
         },
         {
           title: "Content Creator",
-          name: "Queeny",
-          image: "assets/team/IMG_20230803_191026 - Queeny Vempa.jpg",
+          name: "To be assigned",
+          image: "/team/content-creator.jpg",
           responsibilities: ["Photography/videography", "Content creation", "Website management", "Digital presence"]
         }
       ]
