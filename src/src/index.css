@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dragon Fist Martial Arts Design System - Inspired by martial arts power and precision */
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Dragon Fist Logo Theme */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Dragon Red - Exact from logo */
+    --primary: 0 89% 51%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Dragon Gold - Exact from logo accents */
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 0 0% 10%;
+
+    /* Muted tones for subtle elements */
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Accent - Dragon Gold for highlights */
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 89% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 18%;
+    --ring: 0 89% 51%;
+
+    --radius: 0.75rem;
+
+    /* Dragon Fist Gradients - Based on logo colors */
+    --gradient-dragon: linear-gradient(135deg, hsl(0 89% 51%), hsl(15 95% 45%));
+    --gradient-fire: linear-gradient(180deg, hsl(0 89% 51%), hsl(45 100% 55%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 95% 60%));
+    --gradient-shadow: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 15%) 100%);
+    
+    /* Dragon Fist Shadows */
+    --shadow-dragon: 0 10px 40px -10px hsl(0 89% 51% / 0.4);
+    --shadow-gold: 0 10px 30px -10px hsl(45 100% 55% / 0.3);
+    --shadow-strike: 0 25px 50px -12px hsl(0 89% 51% / 0.6);
+    --shadow-inner: inset 0 2px 4px 0 hsl(0 0% 0% / 0.3);
+    
+    /* Animation Variables */
+    --transition-swift: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-power: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Martial Arts Component Styles */
+  .martial-gradient {
+    background: var(--gradient-dragon);
+  }
+  
+  .fire-gradient {
+    background: var(--gradient-fire);
+  }
+  
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+  
+  .shadow-gradient {
+    background: var(--gradient-shadow);
+  }
+  
+  .dragon-shadow {
+    box-shadow: var(--shadow-dragon);
+  }
+  
+  .gold-shadow {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .strike-shadow {
+    box-shadow: var(--shadow-strike);
+  }
+  
+  .inner-shadow {
+    box-shadow: var(--shadow-inner);
+  }
+  
+  .transition-swift {
+    transition: var(--transition-swift);
+  }
+  
+  .transition-power {
+    transition: var(--transition-power);
+  }
+
+  /* Martial Arts Animation Classes */
+  .martial-hover {
+    @apply transition-power hover:scale-105 hover:shadow-[var(--shadow-strike)];
+  }
+  
+  .dragon-glow {
+    @apply relative;
+  }
+  
+  .dragon-glow::before {
+    @apply absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-500;
+    content: '';
+    background: var(--gradient-dragon);
+    filter: blur(20px);
+    z-index: -1;
+  }
+  
+  .dragon-glow:hover::before {
+    @apply opacity-30;
+  }
+
+  /* Typography Classes */
+  .text-dragon {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .font-martial {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
